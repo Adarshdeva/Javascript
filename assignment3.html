@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+<div>
+<form id="reset">
+User Values<input type="text" name="number" id="number"/>
+<input type="button" class="btn btn-primary btn-sm" id="push" value="Push" onclick="myFunction()"/>
+</form>
+</div>
+<p id="dis"></p>
+<input type="button" class="btn btn-primary btn-sm" id="push" value="Click to Display User values" onclick="display.call(undefined,numbers)"/>
+<p id="display"></p>
+
+
+<script>
+var numbers = [];
+function myFunction(){
+var num=parseInt(document.getElementById("number").value);
+numbers.push(num);
+document.getElementById("number").value='';
+disp.apply(undefined,[numbers]);
+}
+
+function disp(nums){
+	var sum= 0;
+	//str = number.length;
+	for(i=0;i<nums.length;i++)
+	{
+		sum+=nums[i];
+	}
+	
+	document.getElementById("dis").innerHTML=sum;
+	
+}
+function display(nums){
+	var str='';
+	str = nums.length
+	var str=nums.join(",");
+	document.getElementById("display").innerHTML=str;
+
+}
+</script>
+
+</body>
+</html>	
